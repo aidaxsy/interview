@@ -1,0 +1,74 @@
+.header-con{
+    height: 64px;
+    background: #262F3E;
+}
+.left{
+    width: 750px;
+    height: 64px;
+    /* line-height: 64px; */
+    float: left;
+    /* background-color: orange; */
+}
+.left .logo{
+    width: 116px;
+    margin: 20px  11px 0 26px;
+}
+.nav-con li {
+    height: 64px;
+    line-height: 64px;
+    font-size: 16px;
+    margin-left: 33px;
+    float: left;
+}
+.nav-con li a{
+    color: #C1C6C8;
+}
+.nav-con .fa-angle-down{
+    font-size: 16px;
+    color: #C1C6C8;
+    /* margin-left: 6px; */
+}
+
+.right{
+    width: 616px;
+    height: 64px;
+    float: right;
+    /* background-color: red; */
+}
+.nav-info li{
+    height: 64px;
+    line-height: 64px;
+    font-size: 16px;
+    margin-right: 32px;
+    float: left;
+}
+.nav-info li a{
+    color: #C1C6C8;
+}
+.nav-info .user a{
+    width: 27px;
+    height: 27px;
+    display: inline-block;
+}
+.nav-info .user a img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+}
+.nav-info .last-txt{
+    display: flex;
+    height: 64px;
+    line-height: 64px;
+    /* margin-top: 20px; */
+}
+.nav-info .last-txt a span{
+    width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+}
+.nav-info .last-txt a i{
+    flex: 1;
+}

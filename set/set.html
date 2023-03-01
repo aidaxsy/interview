@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--     # 题目四：JS 题目
+
+实现一个方法 JS 方法，针对给定的两个数组进行去重并根据年龄分组
+
+```js
+// 例如输入：
+
+const arr1 = [{name: 'Facebook', age: 24}, {name: 'Github', age: 18}, {name: 'OpenAI', age: 18}];
+const arr2 = [{name: 'Google', age: 24}, {name: 'Copilot', age: 20}, {name: 'John', age: 24}];
+
+console.log(groupByAge(arr1, arr2))
+
+// 输出
+{
+    [
+        {
+            "name": "Github",
+            "age": 18
+        },
+        {
+            "name": "OpenAI",
+            "age": 18
+        }
+    ],
+    [
+        {
+            "name": "Copilot",
+            "age": 20
+        }
+    ],
+    [
+        {
+            "name": "Facebook",
+            "age": 24
+        },
+        {
+            "name": "Google",
+            "age": 24
+        }
+    ]
+}
+``` -->
+<!-- <script>
+    // let arr1 = []
+    // function only(arr){
+    //     var obj = {};
+    //     newArr = []
+    //     for(var i = 0; i < arr.length; i ++){
+    //         var v = arr[i];
+    //         if(!obj[v]){
+    //             obj[v] = 1;
+    //             newArr.push(v)
+    //         }
+    //     }
+    //     return newArr
+    // }
+
+    const arr1 = [{name: 'Facebook', age: 24}, {name: 'Github', age: 18}, {name: 'OpenAI', age: 18}];
+    const arr2 = [{name: 'Google', age: 24}, {name: 'Copilot', age: 20}, {name: 'John', age: 24}];
+
+    // console.log(groupByAge(arr1, arr2))
+
+    // let newArr = arr1.filter(item => {
+    //     !arr2.some(ele => ele.name == item.name)
+    // })
+    // console.log('newArr', newArr)
+
+        // for (var i = 0; i < arr2.length; i ++){
+        //     for(var j = 0; j < arr1.length; j ++){
+        //         if(arr2[i].name == arr1[j].name){
+        //             arr1.splice(j, 1)
+        //         }
+        //     }
+        // }
+        // newArr = arr2.concat(arr1)
+        // console.log(newArr)
+
+        function only(arr1, arr2) {
+            let newArr = []
+                arr3 = null
+                
+            const obj = {}
+            for (var i = 0; i < arr2.length; i ++){
+                for(var j = 0; j < arr1.length; j ++){
+                    if(arr2[i].name == arr1[j].name){
+                        arr1.splice(j, 1)
+                }
+            }
+        }
+        return arr3 = arr2.concat(arr1)
+        
+        
+        }
+        // console.log(only(arr1, arr2))
+        const dataArr = only(arr1, arr2)
+
+        function groupBy(arr, fn) {
+            let group = {}
+            arr.map(item => {
+                let type = JSON.stringify(fn(item))
+                group[type] =group[type] || []
+                group[type].push(item)
+            })
+            
+            return Object.keys(group).map(item => {
+                return group[item]
+            })
+        }
+
+        let res = groupBy(dataArr, function(res) {
+            return res.sex
+        })
+console.log(res)
+
+</script> -->
+
+<script>
+    const arr1 = [{name: 'Facebook', age: 24},{name: 'Facebook', age: 24}, {name: 'Github', age: 18}, {name: 'OpenAI', age: 18}];
+    const arr2 = [{name: 'Google', age: 24}, {name: 'Copilot', age: 20}, {name: 'John', age: 24}];
+    // 合并数组
+    const arrTotal = [...arr1,...arr2]
+
+    function quchong (oldArr ,str){
+        let res = new Set()
+        oldArr.filter(item => {
+            let result = JSON.stringify(item)
+            if(res.has(result)){
+                return false
+
+            }else{
+                return res.add(result)
+            }
+        })
+
+
+        // // 得到的是一个去重完之后的数组
+        let arr = []
+        for (let value of res) {
+            let stringItem = JSON.parse(value)
+            arr.push(stringItem)
+
+        }
+
+        
+        var _arr = [],
+        _t = [],
+        // 临时的变量
+        _tmp;
+
+      // 按照特定的参数将数组排序将具有相同值得排在一起
+      arr = arr.sort(function (a, b) {
+        var s = a[str],
+          t = b[str];
+
+        return s < t ? -1 : 1;
+      });
+
+      console.log('arr====',arr)
+
+
+      if (arr.length) {
+        _tmp = arr[0][str];
+      }
+      // 将相同类别的对象添加到统一个数组
+      for (var i in arr) {
+        if (arr[i][str] === _tmp) {
+          _t.push(arr[i]);
+        } else {
+          _tmp = arr[i][str];
+          _arr.push(_t);
+          _t = [arr[i]];
+        }
+      }
+      // 将最后的内容推出新数组
+      _arr.push(_t); //获取到所有整合数据
+    return _arr
+
+    }
+    // quchong(arrTotal)
+    console.log(quchong(arrTotal,'age'))
+</script> 
+</body>
+</html>

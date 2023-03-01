@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.header{
+  width: 100%;
+  background: #262F3E;
+}
+
+
+
+
+/*封装一些公共样式 */
+.float_l{
+  float: left;
+}
+.float_r{
+  float: right;
+}
+.clear_l{
+  border-left: 0 !important;
+}
+
+
+

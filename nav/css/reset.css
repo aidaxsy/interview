@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/* 重置样式表 */
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "Microsoft YaHei";
+}
+a,u{
+  text-decoration: none;
+  color: #666;
+}
+ol,ul,li{
+  list-style: none;
+}
+h1,h2,h3,h,h5,h6{
+  font-size: 16px;
+  font-weight: normal;
+}
+input{
+  border: 0;
+  outline: none;
+}
+textarea{
+  resize: none;
+}
