@@ -5,7 +5,8 @@
 module.exports = {
   devServer: {
     port: 8090,
-    // disableHostCheck:true,
+    historyApiFallback: true,
+    allowedHosts: "all",
     proxy: {
       '/api': {
         target: 'https://your-api.com',
